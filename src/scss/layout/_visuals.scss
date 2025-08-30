@@ -1,0 +1,136 @@
+@use "../utils" as *;
+
+.visuals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include mq(m) {
+    grid-template-columns: auto;
+  }
+
+  & > * {
+    aspect-ratio: 6/5;
+    display: grid;
+    place-items: center;
+
+    @include mq(m) {
+      aspect-ratio: auto;
+    }
+
+    & > * {
+      width: 62%;
+
+      @include mq(s) {
+        width: 100%;
+        padding-inline: var(--space-300);
+      }
+    }
+  }
+
+  .text-1 {
+    grid-row: 1 / 2;
+
+    @include mq(m) {
+      grid-row: auto;
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    place-content: end center;
+    aspect-ratio: 6/5;
+
+    & > * {
+      width: 22rem;
+    }
+
+    &--transform {
+      background-image: url(../../../images/desktop/image-transform.jpg);
+      grid-column: 2 / -1;
+
+      @include mq(m) {
+        grid-column: auto;
+      }
+
+      @include mq(s) {
+        background-image: url(../../../images/mobile/image-transform.jpg);
+      }
+    }
+    &--stand-out {
+      background-image: url(../../../images/desktop/image-stand-out.jpg);
+
+      @include mq(s) {
+        background-image: url(../../../images/mobile/image-stand-out.jpg);
+      }
+    }
+    &--graphic-design {
+      background-image: url(../../../images/desktop/image-graphic-design.jpg);
+
+      @include mq(s) {
+        aspect-ratio: 6/9;
+        background-image: url(../../../images/mobile/image-graphic-design.jpg);
+      }
+    }
+    &--photography {
+      background-image: url(../../../images/desktop/image-photography.jpg);
+
+      @include mq(s) {
+        aspect-ratio: 6/9;
+        background-image: url(../../../images/mobile/image-photography.jpg);
+      }
+    }
+  }
+}
+
+.visuals-content {
+  display: grid;
+  gap: var(--space-400);
+  justify-items: start;
+
+  @include mq(m) {
+    padding-block: var(--space-800);
+    text-align: center;
+  }
+
+  &--alt {
+    padding-block: 0 var(--space-700);
+    text-align: center;
+  }
+
+  &__heading {
+    @include preset-3;
+    justify-self: center;
+    text-align: center;
+
+    @include mq(s) {
+      @include preset-4;
+    }
+
+    &--alt {
+      @include preset-5;
+      color: var(--green-800);
+    }
+
+    &--alt1 {
+      @include preset-5;
+      color: var(--blue-950);
+    }
+  }
+
+  &__description {
+    color: var(--grey-550);
+
+    &--alt {
+      @include preset-11;
+      color: var(--green-600);
+    }
+
+    &--alt1 {
+      @include preset-11;
+      color: var(--blue-800);
+    }
+  }
+}

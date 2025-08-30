@@ -1,9 +1,9 @@
 :root {
   // FONTS
 
-  --semibold: 600;
-  --bold: 700;
-  --black: 900;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-black: 900;
 
   --font-display: "Fraunces", sans-serif;
   --font-body: "Barlow", sans-serif;
@@ -23,6 +23,7 @@
   --grey-600: hsl(213, 9%, 39%);
   --grey-950: hsl(212, 27%, 19%);
 
+  --blue-500: hsl(200, 100%, 62%);
   --blue-800: hsl(198, 62%, 26%);
   --blue-950: hsl(197, 84%, 13%);
 
@@ -55,4 +56,5 @@
   --space-1400: 7rem; // 112px
   --space-1500: 7.5rem; // 120px
   --space-1600: 8rem; // 128px
+  --space-2000: 10rem; // 160px
 }

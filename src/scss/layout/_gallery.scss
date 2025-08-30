@@ -1,0 +1,20 @@
+@use "../utils" as *;
+
+.gallery {
+  --col: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--col), 1fr);
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+
+  @include mq(m) {
+    --col: 2;
+
+    & > * {
+      aspect-ratio: 1/1;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use "../utils" as *;
+
+.testimonials-section {
+  display: grid;
+  gap: var(--space-1000);
+  justify-items: center;
+  padding-block: var(--space-2000);
+
+  @include mq(m) {
+    padding-block: var(--space-900);
+  }
+
+  @include mq(s) {
+    padding-block: var(--space-700);
+    gap: var(--space-700);
+  }
+
+  &__heading {
+    @include preset-6;
+    color: var(--grey-400);
+  }
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(18rem, 21.875rem));
+  gap: var(--space-400);
+
+  @include mq(m) {
+    grid-template-columns: auto;
+    padding-inline: var(--space-1100);
+    gap: var(--space-700);
+  }
+
+  @include mq(s) {
+    padding-inline: var(--space-300);
+  }
+}

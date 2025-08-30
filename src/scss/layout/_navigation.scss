@@ -1,0 +1,160 @@
+@use "../utils" as *;
+
+.navigation {
+  display: none;
+  justify-self: end;
+  align-self: center;
+  z-index: 20;
+
+  @include mq(m) {
+    display: block;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    display: none;
+    position: fixed;
+    left: var(--space-500);
+    top: var(--space-1500);
+    width: calc(100% - 5rem);
+    z-index: 15;
+    max-height: calc(100vh - var(--space-1000));
+    // overflow-y: auto;
+
+    @include mq(s) {
+      left: var(--space-300);
+      width: calc(100% - 3rem);
+    }
+  }
+
+  &__close {
+    display: block;
+    position: fixed;
+    height: 100dvh;
+    width: 100dvw;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .header:has(&__checkbox:checked) ~ &__nav {
+    display: block;
+  }
+
+  &__list {
+    display: grid;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    background-color: var(--white);
+    padding-block: var(--space-500);
+    gap: var(--space-400);
+    position: relative;
+
+    &::before {
+      --dimention: var(--space-300);
+      content: "";
+      display: block;
+      position: absolute;
+      width: var(--dimention);
+      height: var(--dimention);
+      top: calc(-1 * var(--dimention));
+      right: 0;
+      background-color: var(--white);
+      clip-path: polygon(100% 0px, 100% 100%, 0px 100%);
+    }
+  }
+
+  &__link {
+    @include preset-9;
+    display: inline-block;
+    color: var(--grey-550);
+
+    &:hover {
+      color: var(--grey-950);
+    }
+
+    &--contact {
+      @include preset-8;
+      padding: var(--space-200) var(--space-300);
+      border-radius: var(--space-600);
+      color: var(--grey-950);
+      background-color: var(--yellow-500);
+    }
+  }
+
+  &__icon {
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      display: inline-block;
+      width: 1.5rem;
+      height: 0.125rem;
+      background-color: var(--white);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -0.5rem;
+      left: 0;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: transform 0.2s;
+        will-change: transform;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+
+    &::after {
+      top: 0.5rem;
+    }
+  }
+
+  &__button:hover &__icon {
+    background-color: var(--yellow-500);
+  }
+
+  &__button:hover &__icon::before {
+    transform: translateY(-0.125rem);
+    background-color: var(--yellow-500);
+  }
+
+  &__button:hover &__icon::after {
+    transform: translateY(0.125rem);
+    background-color: var(--yellow-500);
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      top: 0;
+    }
+
+    &::before {
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      transform: rotate(-135deg);
+    }
+  }
+}

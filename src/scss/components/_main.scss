@@ -1,9 +1,0 @@
-@use "../utils" as *;
-
-main {
-  max-width: 100%;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: var(--space-300);
-}

@@ -2,6 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght,SOFT@9..144,100..900,0..100&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @include preset-10;
 }

@@ -1,0 +1,62 @@
+@use "../utils" as *;
+
+.footer {
+  display: grid;
+  place-items: center;
+  background-color: var(--green-300);
+  padding-block: var(--space-900);
+
+  &__logo {
+    width: 10.625rem;
+  }
+
+  &__svg {
+    fill: var(--green-600);
+  }
+
+  &__navigation {
+    ul {
+      display: flex;
+      gap: var(--space-700);
+      color: var(--green-500);
+      margin-block: var(--space-900) var(--space-1000);
+
+      @include mq(s) {
+        gap: 0;
+      }
+    }
+  }
+
+  &__navigation-link {
+    padding: var(--space-200) var(--space-300);
+    border-radius: var(--space-600);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      color: var(--white);
+    }
+
+    @include mq(s) {
+      padding: var(--space-100) var(--space-200);
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: var(--space-100);
+
+    a {
+      display: flex;
+      padding: var(--space-100);
+    }
+
+    a:hover svg {
+      transform: scale(1.1);
+    }
+  }
+
+  a:hover &__svg {
+    fill: var(--green-800);
+  }
+}
