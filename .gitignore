@@ -23,7 +23,6 @@ s
 
 # Production
 /build
-/dist
 /.next
 /out
 
