@@ -1,6 +1,8 @@
 @use "../utils" as *;
 
 .header {
+  --drop-shadow: drop-shadow(0 0 var(--space-50) var(--yellow-500));
+
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: var(--space-700) repeat(2, auto);
@@ -34,6 +36,11 @@
   &__logo {
     place-self: center start;
     width: 10.625rem;
+  }
+
+  &__logo:hover &__logo-svg {
+    fill: var(--yellow-500);
+    filter: var(--drop-shadow);
   }
 
   &__navigation {
@@ -102,5 +109,10 @@
     &:hover {
       transform: scale(0.83) translateY(var(--space-100));
     }
+  }
+
+  &__button:hover &__button-svg {
+    stroke: var(--yellow-500);
+    filter: var(--drop-shadow);
   }
 }
