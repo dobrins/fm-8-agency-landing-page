@@ -2,9 +2,10 @@
 
 .gallery {
   --col: 4;
+
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(var(--col), 1fr);
-  overflow: hidden;
 
   img {
     object-fit: cover;

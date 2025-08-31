@@ -2,24 +2,31 @@
 
 .btn {
   --color: var(--yellow-500);
+
   @include preset-8;
-  min-height: var(--space-300);
+
   position: relative;
-  line-height: var(--space-300);
+  min-height: var(--space-300);
   padding-inline: var(--space-125);
+  line-height: var(--space-300);
 
   &::after {
     content: "";
-    display: block;
+
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
+
+    display: block;
+
     width: 100%;
     height: var(--space-125);
-    background-color: var(--color);
-    z-index: -1;
     border-radius: var(--space-300);
+
     opacity: 0.25;
+    background-color: var(--color);
+
     transition: opacity 0.15s;
   }
 

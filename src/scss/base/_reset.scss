@@ -1,8 +1,8 @@
 *,
 *::before,
 *::after {
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -50,13 +50,13 @@ h6 {
 
 ul,
 ol {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 a {
+  color: currentcolor;
   text-decoration: none;
-  color: currentColor;
 
   &:focus-visible {
     outline: 0;

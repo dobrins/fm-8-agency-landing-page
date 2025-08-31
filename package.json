@@ -4,15 +4,21 @@
   "description": "![Design preview for the Tech book club landing page coding challenge](./preview.jpg)",
   "main": "index.js",
   "scripts": {
+    "lint:css": "stylelint \"src/scss/**/*.{scss,css}\"",
+    "lint:fix": "stylelint \"src/scss/**/*.{scss,css}\" --fix",
     "build:sass": "sass src/scss/main.scss dist/style.css --no-source-map --style=compressed",
     "watch:sass": "sass --watch src/scss/main.scss dist/style.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "postcss-lit": "^1.2.0",
+    "prettier": "3.6.2",
     "sass": "^1.89.2",
     "stylelint": "^16.23.1",
-    "stylelint-config-standard": "^39.0.0"
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-order": "^7.0.0"
   }
 }

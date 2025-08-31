@@ -11,12 +11,13 @@
   }
 
   @include mq(s) {
-    padding-block: var(--space-700);
     gap: var(--space-700);
+    padding-block: var(--space-700);
   }
 
   &__heading {
     @include preset-6;
+
     color: var(--grey-400);
   }
 }
@@ -28,8 +29,8 @@
 
   @include mq(m) {
     grid-template-columns: auto;
-    padding-inline: var(--space-1100);
     gap: var(--space-700);
+    padding-inline: var(--space-1100);
   }
 
   @include mq(s) {

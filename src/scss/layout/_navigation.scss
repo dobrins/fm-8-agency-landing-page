@@ -1,10 +1,9 @@
 @use "../utils" as *;
 
 .navigation {
-  display: none;
-  justify-self: end;
-  align-self: center;
   z-index: 20;
+  display: none;
+  place-self: center end;
 
   @include mq(m) {
     display: block;
@@ -15,20 +14,23 @@
   }
 
   &__button {
-    height: 1.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
+    height: 1.5rem;
   }
 
   &__nav {
-    display: none;
     position: fixed;
-    left: var(--space-500);
-    top: var(--space-1500);
-    width: calc(100% - 5rem);
     z-index: 15;
+    top: var(--space-1500);
+    left: var(--space-500);
+
+    display: none;
+
+    width: calc(100% - 5rem);
     max-height: calc(100vh - var(--space-1000));
+
     // overflow-y: auto;
 
     @include mq(s) {
@@ -38,13 +40,15 @@
   }
 
   &__close {
-    display: block;
     position: fixed;
-    height: 100dvh;
-    width: 100dvw;
-    left: 0;
-    top: 0;
     z-index: -1;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100dvw;
+    height: 100dvh;
   }
 
   .header:has(&__checkbox:checked) ~ &__nav {
@@ -52,31 +56,41 @@
   }
 
   &__list {
-    display: grid;
-    width: 100%;
-    list-style: none;
-    text-align: center;
-    background-color: var(--white);
-    padding-block: var(--space-500);
-    gap: var(--space-400);
     position: relative;
+
+    display: grid;
+    gap: var(--space-400);
+
+    width: 100%;
+    padding-block: var(--space-500);
+
+    text-align: center;
+    list-style: none;
+
+    background-color: var(--white);
 
     &::before {
       --dimention: var(--space-300);
+
       content: "";
-      display: block;
+
       position: absolute;
-      width: var(--dimention);
-      height: var(--dimention);
       top: calc(-1 * var(--dimention));
       right: 0;
+
+      display: block;
+
+      width: var(--dimention);
+      height: var(--dimention);
+
       background-color: var(--white);
-      clip-path: polygon(100% 0px, 100% 100%, 0px 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
     }
   }
 
   &__link {
     @include preset-9;
+
     display: inline-block;
     color: var(--grey-550);
 
@@ -86,6 +100,7 @@
 
     &--contact {
       @include preset-8;
+
       padding: var(--space-200) var(--space-300);
       border-radius: var(--space-600);
       color: var(--grey-950);
@@ -96,15 +111,6 @@
   &__icon {
     position: relative;
 
-    &,
-    &::before,
-    &::after {
-      display: inline-block;
-      width: 1.5rem;
-      height: 0.125rem;
-      background-color: var(--white);
-    }
-
     &::before,
     &::after {
       content: "";
@@ -113,8 +119,8 @@
       left: 0;
 
       @media (prefers-reduced-motion: no-preference) {
-        transition: transform 0.2s;
         will-change: transform;
+        transition: transform 0.2s;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -124,6 +130,15 @@
 
     &::after {
       top: 0.5rem;
+    }
+
+    &,
+    &::before,
+    &::after {
+      display: inline-block;
+      width: 1.5rem;
+      height: 0.125rem;
+      background-color: var(--white);
     }
   }
 

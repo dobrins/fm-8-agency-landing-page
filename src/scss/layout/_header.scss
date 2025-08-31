@@ -1,42 +1,43 @@
 @use "../utils" as *;
 
 .header {
-  height: 50rem;
-  background-image: url(../../../images/desktop/image-header.jpg);
-  background-color: var(--blue-500);
-  background-size: 1400px;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  padding: var(--space-400) var(--space-500);
-  align-content: start;
-  animation: slide-bg 1s cubic-bezier(0.07, 0.72, 0.29, 0.96);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: var(--space-700) repeat(2, auto);
   row-gap: var(--space-1100);
+  align-content: start;
+
+  height: 50rem;
+  padding: var(--space-400) var(--space-500);
+
+  background-color: var(--blue-500);
+  background-image: url("../../../images/desktop/image-header.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 1400px;
+
+  animation: slide-bg 1s cubic-bezier(0.07, 0.72, 0.29, 0.96);
 
   @include mq(m) {
+    grid-template-rows: repeat(3, auto);
     row-gap: var(--space-700);
     padding: var(--space-600) var(--space-500);
-    grid-template-rows: repeat(3, auto);
   }
 
   @include mq(s) {
     height: 34rem;
     padding: var(--space-400) var(--space-300);
-    background-image: url(../../../images/mobile/image-header.jpg);
+    background-image: url("../../../images/mobile/image-header.jpg");
     background-size: 100%;
   }
 
   &__logo {
+    place-self: center start;
     width: 10.625rem;
-    justify-self: start;
-    align-self: center;
   }
 
   &__navigation {
-    justify-self: end;
-    align-self: center;
+    place-self: center end;
 
     @include mq(m) {
       display: none;
@@ -49,24 +50,26 @@
   }
 
   &__navigation-link {
-    color: var(--white);
     padding: var(--space-200) var(--space-300);
     border-radius: var(--space-600);
+    color: var(--white);
 
     &--contact {
       @include preset-8;
-      background-color: var(--white);
+
       color: var(--grey-950);
+      background-color: var(--white);
     }
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.25);
       color: var(--white);
+      background-color: rgb(255 255 255 / 25%);
     }
   }
 
   &__title {
     @include preset-1;
+
     grid-column: 1 / -1;
     justify-self: center;
     color: var(--white);
@@ -78,17 +81,22 @@
   }
 
   &__button {
-    width: 100px;
-    display: grid;
-    place-content: center;
-    background-color: transparent;
-    border: 0;
-    outline: 0;
     cursor: pointer;
-    grid-column: 1 / -1;
-    justify-self: center;
-    transform: scale(0.83);
+
     transform-origin: bottom;
+    transform: scale(0.83);
+
+    display: grid;
+    grid-column: 1 / -1;
+    place-content: center;
+    justify-self: center;
+
+    width: 100px;
+    border: 0;
+
+    background-color: transparent;
+    outline: 0;
+
     transition: transform 0.1s;
 
     &:hover {

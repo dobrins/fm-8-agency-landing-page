@@ -3,8 +3,8 @@
 .footer {
   display: grid;
   place-items: center;
-  background-color: var(--green-300);
   padding-block: var(--space-900);
+  background-color: var(--green-300);
 
   &__logo {
     width: 10.625rem;
@@ -18,8 +18,8 @@
     ul {
       display: flex;
       gap: var(--space-700);
-      color: var(--green-500);
       margin-block: var(--space-900) var(--space-1000);
+      color: var(--green-500);
 
       @include mq(s) {
         gap: 0;
@@ -32,8 +32,8 @@
     border-radius: var(--space-600);
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.25);
       color: var(--white);
+      background-color: rgb(255 255 255 / 25%);
     }
 
     @include mq(s) {
@@ -43,8 +43,8 @@
 
   &__social {
     display: flex;
-    align-items: center;
     gap: var(--space-100);
+    align-items: center;
 
     a {
       display: flex;

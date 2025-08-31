@@ -7,14 +7,14 @@
   img {
     width: var(--space-900);
     height: var(--space-900);
-    border-radius: 50%;
     margin-inline: auto;
+    border-radius: 50%;
   }
 
   blockquote {
-    color: var(--grey-600);
-    margin-block: var(--space-700) var(--space-900);
     max-width: 50rem;
+    margin-block: var(--space-700) var(--space-900);
+    color: var(--grey-600);
 
     @include mq(m) {
       margin-block-end: var(--space-400);
@@ -23,12 +23,14 @@
 
   &__name {
     @include preset-7;
+
     color: var(--grey-950);
   }
 
   &__position {
     @include preset-12;
-    color: var(--grey-400);
+
     margin-block-start: var(--space-100);
+    color: var(--grey-400);
   }
 }
